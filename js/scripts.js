@@ -25,6 +25,23 @@ $(document).ready(function() {
     $('#listInput').addClass('gone');
   });
 
+// Wordplay
+// excerise take a string input from user, turns it into an array, filters out word
+// that are shorter than three characters, reverses the new array, and displays the output as a
+// string to the user
+  $('#wordPlaySubmit').click(function(){
+    var userInput = $('input[name="wpInput"]').val();
+    console.log(userInput);
+    var inputArray = userInput.split(" ");
+    console.log(inputArray);
+    var filteredInput = inputArray.filter(word => word.length >= 3);
+
+    console.log(filteredInput);
+    console.log(filteredInput.reverse().toString());
+    $('.wordPlayOutput').text(filteredInput.reverse().toString().replace(/,/g," "));
+
+  })
+
 
 
 
